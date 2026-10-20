@@ -5,7 +5,6 @@ import MusicPlayer from './components/MusicPlayer';
 import HeroSection from './components/HeroSection';
 import GreetingCard from './components/GreetingCard';
 import PhotoGallery from './components/PhotoGallery';
-import RoseCounter from './components/RoseCounter';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -39,7 +38,7 @@ export default function App() {
       {/* Full-screen Opening Intro Overlay with Animation */}
       <IntroScreen 
         herName={coupleData.herName} 
-        hisName={coupleData.hisName}
+        hisName={coupleData.hisName} 
         onEnter={() => setHasEntered(true)} 
       />
 
@@ -66,9 +65,6 @@ export default function App() {
 
       {/* Scrapbook Polaroid & Film Gallery */}
       <PhotoGallery />
-
-      {/* Virtual Rose Bouquet & Click Counter */}
-      <RoseCounter />
 
       {/* Footer */}
       <Footer 

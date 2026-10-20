@@ -13,15 +13,15 @@ import { GiRose, GiLoveLetter } from 'react-icons/gi';
 import { romanticAudio } from '../utils/audio';
 import confetti from 'canvas-confetti';
 
-const DEFAULT_LETTER_CONTENT = `Gửi em yêu của anh,
+const DEFAULT_LETTER_CONTENT = `Gửi em bé yêu của anh,
 
-Ai bảo 20-10 chỉ là ngày của con gái đâu chứ! Với anh, chỉ cần là một dịp đặc biệt, anh đều muốn dành tặng em những điều ngọt ngào và ấm áp nhất.
+Hôm nay 20-10, anh chỉ muốn mượn cái cớ này để nói là anh thương em nhiều xỉu luôn á! Ở cạnh em lúc nào cũng thấy thoải mái, vừa được là chính mình vừa có một người để cưng nựng, chăm sóc và chọc ghẹo mỗi ngày.
 
-Cảm ơn em đã đến bên anh, cùng anh chia sẻ từng câu chuyện vui buồn mỗi ngày. Ở cạnh em, lúc nào anh cũng thấy thoải mái và vui vẻ hết. 
+Cảm ơn em vì đã luôn lắng nghe, chia sẻ và đồng hành cùng anh qua từng chuyện nhỏ nhặt nhất. Nụ cười của em lúc nào cũng là nguồn năng lượng tích cực lớn nhất đối với anh.
 
-Chúc người yêu của anh hôm nay nhận được thật nhiều niềm vui, lúc nào cũng cười tươi và luôn đáng yêu như thế nhé. Mong rằng tụi mình sẽ luôn cùng nhau đi qua thật nhiều ngày kỷ niệm phía trước.
+Chúc em yêu hôm nay nhận được thật nhiều niềm vui, lúc nào cũng cười tít mắt, ăn ngon ngủ kỹ và luôn đáng yêu như vậy nha. Tụi mình sẽ cùng nhau đi qua thật nhiều ngày kỷ niệm ngọt ngào phía trước nữa nhé!
 
-Chúc em ngày 20-10 thật vui vẻ, yêu em nhiều nè! 💖💐`;
+Thương em nhất trên đời nè! 💖💐`;
 
 export default function GreetingCard({ herName = 'Em Yêu', hisName = 'Anh' }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function GreetingCard({ herName = 'Em Yêu', hisName = 'Anh' }) {
   useEffect(() => {
     const savedLetter = localStorage.getItem('mylove_letter_text');
     if (savedLetter) {
-      if (savedLetter.includes('cô gái') || savedLetter.includes('Phụ nữ Việt Nam')) {
+      if (savedLetter.includes('cô gái') || savedLetter.includes('Phụ nữ Việt Nam') || savedLetter.includes('Ai bảo 20-10 chỉ là ngày của con gái')) {
         setLetterText(DEFAULT_LETTER_CONTENT);
         setDraftText(DEFAULT_LETTER_CONTENT);
         localStorage.setItem('mylove_letter_text', DEFAULT_LETTER_CONTENT);
@@ -83,16 +83,16 @@ export default function GreetingCard({ herName = 'Em Yêu', hisName = 'Anh' }) {
       <div className="flex items-center justify-center gap-3 mb-2">
         <GiRose className="text-rose-500 text-xl sm:text-2xl transform -rotate-12" />
         <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-rose-500">
-          Thông Điệp Từ Trái Tim
+          💌 Bức Thư Tay Bí Mật
         </span>
         <GiRose className="text-rose-500 text-xl sm:text-2xl transform rotate-12" />
       </div>
 
       <h2 className="text-3xl sm:text-5xl font-serif-romantic font-bold text-rose-950 text-center mb-4">
-        Thiệp Chúc Mừng 20-10
+        Bức Thư Anh Viết Cho Em
       </h2>
       <p className="text-rose-600/90 text-sm sm:text-base text-center max-w-md mx-auto mb-10 font-light">
-        Bức thư này được anh viết riêng dành cho em. Hãy chạm vào con dấu trái tim để mở ra nhé!
+        Không có gì đao to búa lớn, chỉ là mấy lời thật lòng anh muốn gửi riêng cho em nè. Chạm vào con dấu trái tim để mở ra đọc nhé!
       </p>
 
       {/* Main Interactive Envelope Container */}

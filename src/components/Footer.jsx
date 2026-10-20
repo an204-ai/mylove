@@ -19,8 +19,8 @@ export default function Footer({ hisName = 'Anh', herName = 'Em Yêu' }) {
           {hisName} &hearts; {herName}
         </p>
 
-        <p className="text-xs sm:text-sm text-rose-600/80 font-light max-w-md mx-auto mb-6">
-          Trang web đặc biệt này được làm riêng dành tặng em nhân ngày 20-10. Chúc em lúc nào cũng vui vẻ, đáng yêu và mãi hạnh phúc bên anh nhé!
+        <p className="text-xs sm:text-sm text-rose-700/80 font-light max-w-md mx-auto mb-6 leading-relaxed">
+          Món quà nhỏ nhưng chứa trọn vẹn sự cưng chiều của anh dành cho em nhân ngày 20-10. Cảm ơn em vì đã là một phần tuyệt vời nhất trong cuộc sống của anh! ❤️
         </p>
 
         <button

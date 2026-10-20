@@ -104,14 +104,14 @@ export default function PhotoGallery() {
     <section id="gallery-section" className="relative max-w-6xl mx-auto px-4 py-16">
       {/* Section Header */}
       <div className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100/80 text-rose-600 text-xs font-semibold uppercase tracking-wider mb-2">
-          <FaCamera className="text-xs" /> Góc Kỷ Niệm Yêu Thương
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100/90 text-rose-700 text-xs font-semibold uppercase tracking-wider mb-2.5 border border-rose-200">
+          <FaCamera className="text-xs text-rose-500" /> 🎞️ Cuộn Phim Kỷ Niệm Của Hai Đứa
         </div>
         <h2 className="text-3xl sm:text-5xl font-serif-romantic font-bold text-rose-950 mb-3">
-          Từng Khoảnh Khắc Bên Em
+          Nhật Ký Nụ Cười Của Chúng Mình
         </h2>
-        <p className="text-rose-600/80 text-sm sm:text-base max-w-lg mx-auto font-light">
-          Mỗi bức ảnh là một trang nhật ký chứa chan tình yêu, lưu giữ trọn vẹn những ký ức đẹp nhất của đôi mình.
+        <p className="text-rose-700/80 text-sm sm:text-base max-w-lg mx-auto font-light leading-relaxed">
+          Mỗi tấm hình là một mảnh ghép kỷ niệm đáng yêu của hai đứa mình. Nhìn lại tấm nào cũng thấy vừa nhắng nhít vừa ấm áp hết trơn!
         </p>
 
         {/* Filters */}
