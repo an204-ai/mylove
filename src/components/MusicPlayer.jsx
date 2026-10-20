@@ -120,10 +120,10 @@ export default function MusicPlayer({ isPetalsActive, setIsPetalsActive }) {
         <div className="hidden md:flex flex-col text-left pr-1 cursor-pointer" onClick={togglePlay}>
           <span className="text-xs font-semibold text-rose-700 flex items-center gap-1">
             <FaMusic className={`text-[10px] ${isPlaying ? 'animate-bounce' : ''}`} />
-            {isPlaying ? 'Giai Điệu Tình Yêu' : 'Bật Nhạc 20-10'}
+            {isPlaying ? 'Thank You For Everything' : 'Bật Nhạc 20-10'}
           </span>
           <span className="text-[10px] text-rose-400 font-normal">
-            {isPlaying ? 'Piano Lofi Romance' : 'Nhấn để nghe'}
+            {isPlaying ? 'Diego Gonzalez 💖' : 'Nhấn để nghe'}
           </span>
         </div>
 
