@@ -8,6 +8,7 @@ class RomanticAudioManager {
     this.gainNode = null;
     this.audioElement = null;
     this.synthTimer = null;
+    this.hasStarted = false;
     this.songTitle = 'Thank You For Everything - Diego Gonzalez';
   }
 
@@ -96,17 +97,40 @@ class RomanticAudioManager {
     });
   }
 
-  // Start background song ("Thank You For Everything - Diego Gonzalez")
-  startRomanticBGM() {
+  // Start background song ("Thank You For Everything - Diego Gonzalez") at specified second (default 20s)
+  startRomanticBGM(startSec = 20) {
     this.init();
     const audio = this.getAudio();
     if (audio) {
       audio.volume = this.volume;
+
+      // Jump to 20 seconds on first start
+      if (!this.hasStarted && typeof startSec === 'number' && startSec > 0) {
+        this.hasStarted = true;
+        const setSeekTime = () => {
+          try {
+            audio.currentTime = startSec;
+          } catch (err) {}
+        };
+
+        if (audio.readyState >= 1) {
+          setSeekTime();
+        } else {
+          audio.addEventListener('loadedmetadata', setSeekTime, { once: true });
+        }
+      }
+
       const playPromise = audio.play();
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
             this.isPlaying = true;
+            // Guarantee seek if loaded late
+            if (startSec > 0 && audio.currentTime < startSec - 1) {
+              try {
+                audio.currentTime = startSec;
+              } catch (e) {}
+            }
           })
           .catch((err) => {
             console.warn('Autoplay prevented or waiting for interaction:', err);
@@ -126,13 +150,13 @@ class RomanticAudioManager {
     this.stopSynthBGM();
   }
 
-  toggleBGM() {
+  toggleBGM(startSec = 20) {
     this.init();
     if (this.isPlaying) {
       this.stopRomanticBGM();
       return false;
     } else {
-      this.startRomanticBGM();
+      this.startRomanticBGM(startSec);
       return true;
     }
   }

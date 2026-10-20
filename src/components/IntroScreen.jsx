@@ -403,7 +403,7 @@ export default function IntroScreen({ herName = 'Em Yêu', onEnter }) {
     setIsOpening(true);
 
     romanticAudio.playChime();
-    romanticAudio.startRomanticBGM();
+    romanticAudio.startRomanticBGM(20);
 
     confetti({
       particleCount: 120,
